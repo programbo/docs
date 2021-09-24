@@ -53,7 +53,6 @@ datasource db {
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["referentialActions"]
 }
 
 model Account {
@@ -97,7 +96,7 @@ model User {
 
 model VerificationToken {
   identifier String
-  token      String   @unique
+  token      String   @id
   expires    DateTime
 
   @@unique([identifier, token])
